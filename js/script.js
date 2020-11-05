@@ -1,5 +1,5 @@
 var landingPage = window.location.href.split("-")[1] || "create";
-getArticlePage(landingPage);
+getCommandPage(landingPage);
 
 $('#list-tab a').on('click', function (e) {
 
@@ -8,11 +8,11 @@ $('#list-tab a').on('click', function (e) {
     var idArr = $(this).attr('id').split("-");
 
     window.location.href = '#' + idArr[0] + '-' + idArr[1];
-    getArticlePage(idArr[1]);
+    getCommandPage(idArr[1]);
 });
 
-function getArticlePage(command) {
-    $.get("articles/" + command + ".html", function (data) {
+function getCommandPage(command) {
+    $.get("commands/" + command + ".html", function (data) {
         var ele = $('#list-' + command);
         ele.html(data);
         ele.tab('show');
