@@ -1,0 +1,50 @@
+<div id="article">
+
+  <div class="code-font">
+    <h1>Design Test Data Sheet</h1>
+  </div>
+
+  <hr />
+
+  <div class="content">
+    <p>
+      - <code>The-Octopus-Test</code> framework is designed based on the <code>DataDriven</code> approach.
+    </p>
+    <p>
+      - In order to have the DataDriven feature, You need to have a test method that is designed to accept defferent test
+      data sets.
+    </p>
+    <p>- Each test method / application page should have a separated data sheet.</p>
+    <p>- You can follow the relational data design like SQL by refrence a row from data sheet to another.    </p>
+
+    <br />
+    <hr />
+    <h4>Steps to Design a Test Data Sheet :</h4>
+    <hr />
+    <br />
+
+    <ul>
+      <li class="notbold">Go to the folder <b> resources / TestData </b> .</li>
+      <li class="notbold">Open the file <b>ControlFile.xlsx</b>.</li>
+      <li class="notbold">Follow Excel sheet how to create a new sheet.</li>
+      <li class="notbold">Open the new created Sheet. </li>
+      <li class="notbold">Design the new sheet as following.</li>
+          <p>- first column is the <b>RowID</b> that holds numbers of test case data rows .</p>
+          <p>- second column is the <b>LoginRow</b> to refrence the login data row from the login data sheet .</p>
+          <p>- third column is the <b>TestCaseDescription</b> to set a discription about the test case executed by this data row .</p>
+          <p>- fourth column is the <b>ExpectedResult</b> to give an exepected result for that data row to use in the code to assert results .</p>
+          <p>- rest of the sheet is column names like the fields on the application page/screen .</p>
+     
+      <li class="notbold">Follow the <b>ControlFile.xlsx</b> in the <a
+          href="https://github.com/the-octopus/octopus-sample-test"><b>The-Octopus-Sample-Test-Project</b></a></li>
+    </ul>
+    </br>
+
+    <p>
+      - Sample <b>Data</b> Sheet design.
+    </p>
+    </br>
+    <img class="img" src="img/sample_data_sheet.png">
+  </div>
+
+</div>

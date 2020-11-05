@@ -1,0 +1,72 @@
+<div id="article">
+
+  <div class="code-font">
+    <h1>Passing Data to Test methods</h1>
+  </div>
+
+  <hr />
+
+  <div class="content">
+    <p>
+      <code>The-Octopus-Test</code> framework is designed based on the <code>DataDriven</code> approach.
+    </p>
+    <p>
+      In order to have the DataDriven feature, You need to have a test method that is designed to accept defferent test
+      data sets.
+    </p>
+
+    <br />
+    <hr />
+    <h4>Test methods guidlines:</h4>
+    <hr />
+    <br />
+
+    <p>- It is a mandatory to pass a dictionary to the test method.</p>
+    <p>- It is a MUST to use the <code>dict()</code> data collection, becuase it is a Key/Value data collection type.
+    </p>
+
+    
+
+    <br />
+    <hr />
+    <h4>Passing test data to test method :</h4>
+    <hr />
+    <p>
+      - as I explianed it is a mandatory to pass a dictionary <code>dict()</code> data collection to the test method.
+    </p>
+    <p>
+      - Why we are using the <code>dict()</code> data collection, becuase we need to access the test data by key/value
+      approach.
+    </p>
+    <p>
+      - The data source for test data is the  <b>ControlFile.xlsx</b>.
+    </p>
+    <p>
+      - Each application page/screen should have a separated data sheet in the **ControlFile.xlsx** file. 
+    </p>
+    <p>
+      - The strucure of the Data sheet is like SQL data tables, first row should have the column names. 
+    </p> 
+    <p>
+      - It is mandatory to add a RowID column in the first column in the data sheet. 
+    </p> 
+    <p>
+      - It is mandatory to have a meaningful column names as per the fields on the application page/screen. 
+    </p>
+    <p>
+      - Sample Code. 
+    </p>
+    <pre>
+       <graycode>
+        def login(self,<b>tdr=dict()</b>):
+
+        self.set_userName(<b>tdr["userID"]</b>)
+       </graycode>
+    </pre>
+    <p>
+      - Sample Data Sheet design. 
+    </p>
+    <img class="img" src="img/login_sheet.png">
+  </div>
+
+</div>

@@ -1,0 +1,66 @@
+<div id="article">
+
+  <div class="code-font">
+    <h1>Refrence Login Data to Test Data Sheets</h1>
+  </div>
+
+  <hr />
+
+  <div class="content">
+    <p>
+      <code>The-Octopus-Test</code> framework is designed based on the <code>DataDriven</code> approach.
+    </p>
+    <p>
+      In order to have the <b>DataDriven</b> feature, You need to have a scenario method that is designed to accept
+      defferent test data sets.
+    </p>
+
+    <br />
+    <hr />
+    <h4>Steps to Refrence Login Data to Test Data Sheets :</h4>
+    <hr />
+    <br />
+
+    <ul>
+      <li class="notbold">Go to the folder <b> resources / TestData </b> .</li>
+      <li class="notbold">Open the file <b>ControlFile.xlsx</b>.</li>
+      <li class="notbold">Open the <b>Login</b> Sheet. </li>
+      <li class="notbold">Copy the value of the column <b>RowID</b> of the required account. </li>
+      <li class="notbold">Open the required Data Sheet. </li>
+      <li class="notbold">Put the copied value in the column <b>LoginRow</b> in required test case data . </li>
+     
+      <li class="notbold">Follow the <b>ControlFile.xlsx</b> in the <a
+          href="https://github.com/the-octopus/octopus-sample-test"><b>The-Octopus-Sample-Test-Project</b></a></li>
+    </ul>
+    </br>
+
+    <p>
+      - Sample Code:
+    </p>
+    <pre>
+      <graycode>
+
+        # import the octopus DataManager class
+        
+        from Octopus.OctopusCore.dataManager import DataManager
+        
+        # define a variable and use the getDictionaryTableFromexcel method to get a dict() data type
+        # the index [0] means get only the first row from the returened set of rows.
+
+        LoginRow = DataManager.getDictionaryTableFromexcel("select * from ["Login"$] where RowID=" + rowNum )[0] 
+
+    </graycode>
+    </pre>
+
+
+    <p>
+      - Sample <b>Test Data</b> Sheet design.
+    </p>
+    </br>
+    <img class="img" src="img/login_sheet.png">
+    </br>
+    <img class="img" src="img/sample_data_sheet.png">
+    </br>
+  </div>
+
+</div>

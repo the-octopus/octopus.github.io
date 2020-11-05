@@ -1,0 +1,53 @@
+<div id="article">
+
+  <div class="code-font">
+    <h1>Mapping Test Data to Scenario methods</h1>
+  </div>
+
+  <hr />
+
+  <div class="content">
+    <p>
+      <code>The-Octopus-Test</code> framework is designed based on the <code>DataDriven</code> approach.
+    </p>
+    <p>
+      In order to have the <b>DataDriven</b> feature, You need to have a scenario method that is designed to accept
+      defferent test
+      data sets.
+    </p>
+
+    <br />
+    <hr />
+    <h4>Steps to map a Test Data to a Scenario Method:</h4>
+    <hr />
+    <br />
+
+    <ul>
+      <li class="notbold">Go to the folder <b> test / scenarios </b> .</li>
+      <li class="notbold">Open the file <b>testScenarios.py</b>.</li>
+      <li class="notbold">Copy the test <b>scenario method name</b>.</li>
+      <li class="notbold">Go to the folder <b> resources / TestData </b> .</li>
+      <li class="notbold">Open the file <b>ControlFile.xlsx</b>.</li>
+      <li class="notbold">Open the <b>Driver</b> Sheet. </li>
+      <li class="notbold">In a new row put the <b>Name of Scenario Method</b> in the column <b>Function_Name</b>.</li>
+      <li class="notbold">In the same row put the <b>Name of Data Sheet</b> in the column <b>TestDataSheetName</b>.</li>
+      <li class="notbold">In the same row put the <b>row numbers of test data sheet </b> in the column
+        <b>TestDataSheetRowNo</b>.</li>
+      <li>The data sheet row Numbers, can be <b>range</b> like 1-10 , or can be <b>list</b> like 1,2,3,5,8 </li>
+      <li class="notbold">Follow the <b>ControlFile.xlsx</b> in the <a
+          href="https://github.com/the-octopus/octopus-sample-test"><b>The-Octopus-Sample-Test-Project</b></a></li>
+    </ul>
+    </br>
+
+
+    <p>
+      - Sample <b>Driver</b> Data Sheet design.
+    </p>
+    </br>
+    <img class="img" src="img/scenario.png">
+    </br>
+    <img class="img" src="img/driver_sheet.png">
+    </br>
+  </div>
+
+</div>

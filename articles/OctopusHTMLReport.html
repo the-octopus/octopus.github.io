@@ -1,0 +1,65 @@
+<div id="article">
+
+  <div class="code-font">
+    <h1>OctopusHTMLReport </h1>
+  </div>
+
+  <hr />
+
+  <div class="content">
+    <p>
+      - <code>The-Octopus-Test</code> framework has an amazing reporting tool, which is the
+      <code>OctopusHTMLReport</code> reporter.
+    </p>
+    <p>
+      - The <code>OctopusHTMLReport</code> reporter clas can be used to report details as info to the HTML report.
+    </p>
+    <p>
+      - The <code>OctopusHTMLReport</code> reporter clas can be used to report pass/fail and reflect the status of
+      execution and some statistics.
+    </p>
+
+    <p><b>In order to use the reporting mechanism of the-octopus-test framework:</b></p>
+    - Please follow the example bellow
+
+    </br>
+    <pre>
+      <gracode>
+
+        # import the reporter class
+        from Octopus.OctopusHTMLReport.OctopusReporter import Reporter
+
+        # report info step in the report , without screen shot.
+        Reporter.info(" details ")
+
+        # report a success step in the report , witht screen shot.
+        Reporter.passed(" details ")
+
+        # report a failure step in the report , with screen shot.
+        Reporter.failed(" details ")
+
+        # report error step in the report , with screen shot.        
+        Reporter.error(" details ") 
+        
+
+        <b># it is reocmmended to use this method in the except: Block of a Try: Block </b>       
+        def ValidateLoginTest(TestDataRow=dict()):
+            try:
+              
+            except Exception as error:            
+                Reporter.error("Validate Login Test Failed for {0}".format(error)) #ValidateLoginTest
+
+      </gracode>
+    </pre>
+
+
+    <br />
+    <hr />
+    <h4>Sample report:</h4>
+    <hr />
+    <br />
+    <img class="img" src="img/report.png">
+
+  </div>
+
+</div>

@@ -1,0 +1,146 @@
+<div id="article">
+
+  <div class="code-font">
+    <h1>Test project structure</h1>
+  </div>
+
+  <hr />
+
+  <div class="content">
+    <p>
+      <code>The-Octopus-Test</code> framework is designed to be easy to use and configurable.
+      and give more control on the execution of auotmated test cases.
+    </p>
+    <p>
+      In order to have these feature, You need to have a project structure that enable and help use these features.
+    </p>
+
+    <p>
+      To create a new new test project, and for a quick start I would recommend to clone
+      <code>git clone https://github.com/the-octopus/octopus-sample-test.git </code> 
+      the octopus sample test project <a href="https://github.com/the-octopus/octopus-sample-test"><b>The-Octopus-Sample-Test-Project</b></a>.
+    </p>
+    <br />
+
+
+    <hr />
+    <h4>Folder structure</h4>
+    <hr />
+    <p>
+      <b>It is a mandatory to keep the naming and structure of folder as explained bellow.</b>
+    </p>
+    <p>
+      For example, to create a test project at the latest you have to follow that structure:
+    </p>
+
+    <pre>
+      <graycode>
+        Octopus_Sample_Test
+          +--------------------------+          
+          |                          |
+          |reports                   |
+          |                          |
+          |resourcses                |                        
+          |    ChromeDriver          |
+          |    ChromeDriver          |
+          |    ChromeDriver          |
+          |    ChromeDriver          |
+          |    TestData              |
+          |       ControlFile.xlsx   |
+          |test                      |                        
+          |    pages                 |
+          |       loginPage.py       |
+          |       homePage.py        |
+          |       ....               |
+          |       ....               |
+          |    scenarios             |
+          |       testScenarios.py   |
+          |                          |
+          |                          |
+          |main.py                   |    
+          |                          |          
+          +--------------------------+
+    </graycode>
+    </pre>
+
+
+
+    <br />
+    <hr />
+    <h4>Reports folder :</h4>
+    <hr />
+    <p>
+      By default, It is auto created after test run finish.
+    </p>
+    <p>
+      It contains a subfolders with all exetcutions and to keep history for each run, it creates a new folder with name
+      contains a time stamp.
+    </p>
+    <p>
+      Sub-folder name like <b>Automation_Result_20201028164110</b>.
+    </p>
+    <p>
+      The sub-folder contains a screen shoots subfolder with name <b>ScreenShots_projectName</b>
+      and the auto generated <b>OctopusHTMLReport</b> with name <b>Automation_Report_projectName.html</b>.
+    </p>
+
+
+    <br />
+    <hr />
+    <h4>Resources folder :</h4>
+    <hr />
+    <p>It contains the test browsers extensions and the test data excel sheet as well.</p>
+    <p>
+      Sub folders are:</p>
+    <ul>
+      <li>ChromeDriver</li>
+      <p>- it contains the Chrome Driver extension exe file.</p>
+      <li>FireFoxriver</li>
+      <p>- it contains the FireFox Driver extension exe file.</p>
+      <li>IEdgeDriver</li>
+      <p>- it contains the Edge Driver extension exe file.</p>
+      <li>TestData</li>
+      <p>- it contains the test data excel sheet <b>ControlFile.xlsx</b> .</p>
+    </ul>
+
+
+    <br />
+    <hr />
+    <h4>Test folder :</h4>
+    <hr />
+    <p>
+      It hold all the testing related classes for individual pages and the test scenarios class as well.</p>
+
+    <p> It contains 2 sub folders <b>pages</b> & <b>scenarios</b>.
+    </p>
+    <ul>
+      <li>pages</li>
+      <p>- we are following the POM architicture pattern, so this folder contains a python module / file for each page
+        from the application under test.</p>
+      <li>scenarios</li>
+      <p>- It Contains only 1 module/file with the name <b>testScenarios.py</b> , and this class is the one that holds
+        the test scenario methods that will
+        be called by the driver module, these methods can combine more than one test method from different modules under
+        the pages class.</p>
+    </ul>
+
+
+    <br />
+    <hr />
+    <h4>main .py file:</h4>
+    <hr />
+    <p>This module is the main entry point for the execution.</p>
+    <p>In order to run our project from the command line as follow.</p>
+    <p>- open command line.</p>
+    <p>- cd to the folder contains the main .py.</p>
+    <p>- run the command</p>
+
+    <pre>
+       <graycode>
+       python main.py 
+       </graycode>
+      </pre>
+
+  </div>
+
+</div>

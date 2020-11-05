@@ -1,0 +1,176 @@
+<div id="article">
+
+  <div class="code-font">
+    <h1>Test Class</h1>
+  </div>
+
+  <hr />
+
+  <div class="content">
+    <p>
+      <code>The-Octopus-Test</code> framework is following the <code>POM</code> design pattern.
+    </p>
+    <p>
+      In order to implement the POM modle, You need to have a class for each page/screen on your application.
+    </p>
+
+    <p><b>Steps to create a Test Class and manage imports:</b></p>
+    <ul>
+      <li class="notbold">Go to the folder ** test / pages ** .</li>
+      <li class="notbold">Create a python file example **loginPage.py**.</li>
+      <li class="notbold">Follow the example in the <a
+          href="https://github.com/the-octopus/octopus-sample-test"><b>The-Octopus-Sample-Test-Project</b></a>.</li>
+    </ul>
+    </br>
+    <pre>
+      <gracode>
+
+          from selenium.webdriver.common.by import By
+          from Octopus.OctopusHTMLReport.OctopusReporter import Reporter
+          from Octopus.OctopusCore.selenium_extensions import (Click, findElementBy, isDisplayed,
+                                              isEnabled, isSelected, sendKeys,
+                                              waitUntilDisplay, waitUntilExistInDOM,
+                                              waitUntilHidden,select,multi_select)
+
+          class LoginPage:
+              driver = None
+              def __init__(self,driver):
+                  self.driver = driver
+              
+              # https://www.codewars.com/users/sign_in
+
+              # Locators Variables                   
+              userName = (By.ID, 'user_email')
+              password = (By.ID,'user_password')
+              loginError = (By.XPATH,'//div[contains(@class,"flash-msg error")]')
+              submitButton = (By.XPATH,'//button[@type="submit"]')
+              lstCountriesLocator = (By.XPATH,'//button[@type="submit"]')
+
+              # WebElements of the page
+              txtUserName=None
+              txtPassword=None
+              btnSubmit=None
+              lstCountries=None
+              divNotifcation=None
+
+              # setter method
+              def set_userName(self, _userName):              
+                  self.txtUserName = self.driver.findElementBy(*LoginPage.userName)
+                  self.txtUserName.sendKeys(_userName)        
+
+              # setter method
+              def set_password(self, _password):
+                  self.txtPassword = self.driver.findElementBy(*LoginPage.password)       
+                  self.txtPassword.sendKeys(_password)        
+                  
+              # click method
+              def click_submit(self):
+                  self.btnSubmit = self.driver.findElementBy(*LoginPage.submitButton)               
+                  self.btnSubmit.Click()
+                  
+              # Test Method
+              def login(self,tdr=dict()):        
+                  self.set_userName(tdr["userID"])
+                  self.set_password(tdr["Password"])        
+                  self.click_submit()
+
+              # Login assertion method    
+              def login_error_displayed(self):
+                  self.divNotifcation = self.driver.findElementBy(*LoginPage.loginError)
+
+                  if self.divNotifcation.waitUntilDisplay(3):
+                      # report fail message to the HTMLReport and Console as well
+                      Reporter.failed("Login Failed for error : {0}".format(self.divNotifcation.text))
+                      return False
+                  elif self.divNotifcation.waitUntilHidden(3):
+                      # report pass message to the HTMLReport and Console as well
+                      Reporter.passed("Login passed")
+                      return True             
+
+      </gracode>
+    </pre>
+    
+
+    <br />
+    <hr />
+    <h4>Importatnt notes about <code>imports</code> in Test Class:</h4>
+    <hr />
+    <br />
+
+    <p class="bold"> - In order to locate a web element using the-Octopus-Test methods you have to import. </p>
+     <p>As explained in the above class example.</p> 
+    <pre>
+      <gracode>
+          from selenium.webdriver.common.by import By
+
+          from Octopus.OctopusCore.selenium_extensions import findElementBy
+
+          # Locators Variables 
+          userName = (By.ID, 'user_email')
+
+          # WebElements of the page
+          txtUserName=None
+
+          # in the setter method
+          <b>self.txtUserName = self.driver.findElementBy(*LoginPage.userName)</b>
+      </gracode>
+    </pre>
+
+    <p class="bold"> -  In order to interact (click,sendKeys,wait) with a web element you have to import. </p>
+     
+    <p>As explained in the above class example.</p> 
+    <pre>
+      <gracode>
+        from Octopus.OctopusCore.selenium_extensions import (isDisplayed,
+                    isEnabled, isSelected, 
+                    waitUntilDisplay, waitUntilExistInDOM,
+                    waitUntilHidden,select,multi_select)
+
+          <b>#to be able to click on element and report the click action to the HTML report</b>
+          self.btnSubmit.Click()
+
+          <b># to send a data to a text field and do clear the field before entering data
+             and report the event to HTML report</b>
+          self.txtPassword.sendKeys(_password)
+          
+          <b># to wait for a element until it is displayed for a maximum of seconds</b>
+          self.divNotifcation.waitUntilDisplay(3)
+
+          <b># alot of other methods are there in the class Octopus.OctopusCore.selenium_extensions</b>
+      </gracode>
+    </pre>
+         
+    <p class="bold"> -  In order to report the status about test stpes/cases you have to import. </p>
+     
+    <p>As explained in the above class example.</p> 
+    <pre>
+      <gracode>
+        # import the reporter class
+        from Octopus.OctopusHTMLReport.OctopusReporter import Reporter
+
+          <b># report info step in the report , without screen shot.</b>
+          Reporter.info(" details ")
+
+          <b># report a success step in the report , witht screen shot.</b>
+          Reporter.passed(" details ")
+
+          <b># report a failure step in the report , with screen shot.</b>
+          Reporter.failed(" details ")
+
+          <b># report error step in the report , with screen shot.
+          # it is reocmmended to use this method in the except: Block of a Try: Block</b>
+          Reporter.error(" details ")
+
+      </gracode>
+    </pre>
+   
+    <br />
+    <hr />
+    <h4>Sample report:</h4>
+    <hr />
+    <br />
+    <img class="img" src="img/report.png">
+
+  </div>
+
+</div>

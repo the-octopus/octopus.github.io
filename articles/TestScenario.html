@@ -1,0 +1,63 @@
+<div id="article">
+
+  <div class="code-font">
+    <h1>Test Scenario Methods</h1>
+  </div>
+
+  <hr />
+
+  <div class="content">
+    <p>
+      - <code>The-Octopus-Test</code> framework is following the <code>KeyWord Driven</code> approach.
+    </p>
+    <p>
+      - The <code>KeyWords </code> in the framework are the <b>name</b> of the scenario method in the <code>testScenarios.py</code> class.
+    </p>
+    <p>
+      - The  <code>testScenarios.py</code> class, is <b>mandatory</b> to annotate all methods that will be executed as <code>@staticmethod</code>.
+    </p>
+    <p>
+      - The  <code>testScenarios.py</code> class, is <b>mandatory</b> to be only one class under the path  <code>test/scenarios</code>.
+    </p>
+    <p>
+      - The mapping between keywords "method name" and the test data is implement in the <code>Driver</code> data sheet in  <code>ControlFile.xlsx</code>.
+    </p>
+
+    <p><b>Steps to create a Test Scenario Method :</b></p>
+    <ul>
+      <li class="notbold">Go to the folder <b> test / scenarios </b>> .</li>
+      <li class="notbold">Open the file <b>testScenarios.py</b>.</li>
+      <li class="notbold">Follow the example in the  <a
+          href="https://github.com/the-octopus/octopus-sample-test"><b>The-Octopus-Sample-Test-Project</b></a>,  as bellow code sample.</li>
+    </ul>
+    </br>
+    <pre>
+      <gracode>
+        # import the octopus supportive classes
+        # to report a status in the except: block
+        from Octopus.OctopusHTMLReport.OctopusReporter import Reporter
+        
+        #inmport the test method / page class , for exmaple loginPage
+        from test.pages.loginPage import LoginPage
+  
+        class TestScenarios:          
+            @staticmethod
+            def ValidateLogin(TestDataRow=dict()):
+                try:
+                  login_page = LoginPage(Globals.Test.Browser) # initailize object from the class loginPAge by passing the Browser.
+                  login_page.login(TestDataRow) # passing the test data that is initialized in framework as per the driver data sheet configurations.
+                  login_page.login_error_displayed()
+                except Exception as error:            
+                    Reporter.error("Validate Login Failed for {0}".format(error)) #ValidateLogin
+            
+
+      </gracode>
+    </pre>
+    
+
+    <br />
+    
+
+  </div>
+
+</div>

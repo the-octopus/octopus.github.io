@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Highlight pre code CSS -->
+  <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script> -->
+
+  <title>The-Octopus-Test</title>
+</head>
+<body>
+
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand">
+      <img src="https://the-octopus.github.io/OctopusHTMLReportResources/Logo_large.png" width="60" height="60" class="d-inline-block align-top" alt="" loading="lazy">
+      <span style="font-size: 40px">The-Octopus-Test</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" style="position: relative;bottom: -6px;" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Documentation <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="form-inline my-2 my-lg-0">
+
+      <a href="https://github.com/the-octopus/octopus-sample-test" target="_blank" title="GitHub Project page" style="color: #959da5;">
+        <svg height="20" fill="#959da5" class="octicon octicon-mark-github d-block" alt="GitHub" viewBox="0 0 16 16" version="1.1" width="60" aria-hidden="true">
+          <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+      </a>
+
+      <a class="btn btn-outline-success my-2 my-sm-0" target="_blank" href="https://github.com/the-octopus/octopus-sample-test#test-development-">Getting Started</a>
+
+      <a href="https://pypi.org/project/the-octopus-test" target="_blank" title="PyPi Project page" style="color: #959da5;">
+        <img height="20" fill="#959da5" class="octicon octicon-mark-github d-block" src="https://pypi.org/static/images/logo-small.svg" alt="PyPi" viewBox="0 0 16 16" version="1.1" width="60" aria-hidden="true">
+      </img>
+      </a>
+      <a class="btn btn-outline-success my-2 my-sm-0" target="_blank" href="https://pypi.org/project/the-octopus-test/">Install</a>
+    </div>
+
+  </nav>
+
+
+  <div id="wrapper" style="padding-left: 10%; padding-right: 10%; padding-bottom: 50px">
+
+    <div style="padding-top: 50px; padding-bottom: 10px">
+      <h2>Introduction</h2>
+      <hr>
+
+      
+      <div>
+        <p><a href="https://pypi.org/project/the-octopus-test/" ><b>The-Octopus-Test</b></a> is a <b>Free</b> Python Test Automation Framework for E2E Testing, That built on <b>Python</b> programming language. 
+          Using <b>Selenium</b> and <b>APPIUM</b> test automation tools.</p>
+        <p>It is a <b>Hybrid</b> Test Automation Framework, that combines features of (Modular, Keyword Driven and Data driven).</p>
+        <p>It uses <b>Microsoft Excel Sheet</b> as the source for both test data and keywords.</p>
+        <p>It uses <b>OctopusHTMLReport</b> that is based on <b>ExtentHTMLReport </b>template to generate execution test results.</p>
+        <p><b>The-Octopus-Test</b> can be used when you need an easy way to control, execute and report test results, for any Python method.</p>
+        <p><b>The-Octopus-Test</b> do not use any type of annotations or builtin test frameworks, it is open source and customizable.</p>
+        </br>
+        <h4> Basic Concepts: </h4 >
+          <ul>
+            <li>Data Driven:</li>
+              <p>- All test data is stored in Microsoft excel Data Sheet.</p>
+            <li>Keyword Driven :</li>
+              <p>- Function names are stored in Microsoft excel Data Sheet as well some flages to control which function to be executed with which data source.</p>
+            <li>Page Object pattern [POM] :</li>
+              <p>
+                - All test cases are written under the test/pages folder.</p>
+              <p>- Each page/module has a separate file.</p>                
+            <li>Selenium Extensions :</li>
+              <p>Added selenium extensions class to give a custom functions like Click(), sendKeys() , etc... .</p>
+            <li>Objects shared repository :</li>
+              <p>- I recommend creating a locatores module that hold individual classes for elements on an individual page to be shared on all pages.</p>
+            <li>ExtentHTMLReport template for reporting :</li>
+              <p>- I used the most professional reporting tool, Extent HTML report as template to generate the test execution report.</p>
+          </ul>
+         </div>
+
+      <div>
+        Show your support and star the project
+          <span style="position: relative;bottom: -10px;">
+            <iframe src="https://ghbtns.com/github-btn.html?user=the-octopus&repo=octopus-sample-test&type=star&count=true&size=large" frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
+          </span>
+      </div>
+    </div>
+
+    <div id="docs">
+
+      <hr >
+      <div style="padding-bottom: 20px; font-size: larger">Documentation References</div>
+
+      <div class="row custom-collapse">
+        <div class="col-2">
+          <div class="list-group" id="list-tab" role="tablist">
+            <a class="list-group-item list-group-item-action list-group-item-light borderless" id="list-create-list" data-toggle="list" href="#list-create" role="tab" aria-controls="create"><div class="code-font">Create test project</div></a>
+            <a class="list-group-item list-group-item-action list-group-item-light borderless" id="list-TestClass-list" data-toggle="list" href="#list-TestClass" role="tab" aria-controls="TestClass"><div class="code-font">Develop test class</div></a>
+            <a class="list-group-item list-group-item-action list-group-item-light borderless" id="list-TestMethod-list" data-toggle="list" href="#list-TestMethod" role="tab" aria-controls="TestMethod"><div class="code-font">Develop test method</div></a>
+            <a class="list-group-item list-group-item-action list-group-item-light borderless" id="list-TestData-list" data-toggle="list" href="#list-TestData" role="tab" aria-controls="TestData"><div class="code-font">Passing test data to method</div></a>
+            <a class="list-group-item list-group-item-action list-group-item-light borderless" id="list-OctopusHTMLReport-list" data-toggle="list" href="#list-OctopusHTMLReport" role="tab" aria-controls="OctopusHTMLReport"><div class="code-font">OctopusHTMLReport</div></a>
+            <a class="list-group-item list-group-item-action list-group-item-light borderless" id="list-TestScenario-list" data-toggle="list" href="#list-TestScenario" role="tab" aria-controls="TestScenario"><div class="code-font">Develop test scenario method</div></a>
+            <a class="list-group-item list-group-item-action list-group-item-light borderless" id="list-MappingTestData-list" data-toggle="list" href="#list-MappingTestData" role="tab" aria-controls="MappingTestData"><div class="code-font">Mapping test data source with scenario method</div></a>
+            <a class="list-group-item list-group-item-action list-group-item-light borderless" id="list-ControlExecution-list" data-toggle="list" href="#list-ControlExecution" role="tab" aria-controls="ControlExecution"><div class="code-font">Control execution of test scenario methods</div></a>
+            <a class="list-group-item list-group-item-action list-group-item-light borderless" id="list-EnvironmentSettings-list" data-toggle="list" href="#list-EnvironmentSettings" role="tab" aria-controls="EnvironmentSettings"><div class="code-font">Configure test environment settings</div></a>
+            <a class="list-group-item list-group-item-action list-group-item-light borderless" id="list-DesignDataSheet-list" data-toggle="list" href="#list-DesignDataSheet" role="tab" aria-controls="DesignDataSheet"><div class="code-font">Design test data sheet</div></a>
+            <a class="list-group-item list-group-item-action list-group-item-light borderless" id="list-RefrenceLoginData-list" data-toggle="list" href="#list-RefrenceLoginData" role="tab" aria-controls="RefrenceLoginData"><div class="code-font">Refrence login data for test data</div></a>
+            <!-- <a class="list-group-item list-group-item-action list-group-item-light borderless" id="list-DesignDriver-list" data-toggle="list" href="#list-DesignDriver" role="tab" aria-controls="DesignDriver"><div class="code-font">Design driver sheet, link test methods with test data</div></a> -->
+            <a class="list-group-item list-group-item-action list-group-item-light borderless" id="list-SampleProject-list" data-toggle="list" href="#list-SampleProject" role="tab" aria-controls="SampleProject"><div class="code-font">The-Octopus-Sample-Test-Project</div></a>
+            <a class="list-group-item list-group-item-action list-group-item-light borderless" id="list-RunningTest-list" data-toggle="list" href="#list-RunningTest" role="tab" aria-controls="RunningTest"><div class="code-font">Running the test</div></a>
+            <a class="list-group-item list-group-item-action list-group-item-light borderless" id="list-About-list" data-toggle="list" href="#list-About" role="tab" aria-controls="About"><div class="code-font">About the Owner</div></a>
+            
+          </div>
+        </div>
+
+        <div class="col-8">
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade" id="list-create" role="tabpanel" aria-labelledby="list-create-list"></div>
+            <div class="tab-pane fade" id="list-TestClass" role="tabpanel" aria-labelledby="list-ssh-list"></div>
+            <div class="tab-pane fade" id="list-TestMethod" role="tabpanel" aria-labelledby="list-start-list"></div>
+            <div class="tab-pane fade" id="list-TestData" role="tabpanel" aria-labelledby="list-stop-list"></div>
+            <div class="tab-pane fade" id="list-OctopusHTMLReport" role="tabpanel" aria-labelledby="list-stop-list"></div>
+            <div class="tab-pane fade" id="list-TestScenario" role="tabpanel" aria-labelledby="list-stop-list"></div>
+            <div class="tab-pane fade" id="list-MappingTestData" role="tabpanel" aria-labelledby="list-stop-list"></div>
+            <div class="tab-pane fade" id="list-ControlExecution" role="tabpanel" aria-labelledby="list-stop-list"></div>
+            <div class="tab-pane fade" id="list-EnvironmentSettings" role="tabpanel" aria-labelledby="list-stop-list"></div>
+            <div class="tab-pane fade" id="list-DesignDataSheet" role="tabpanel" aria-labelledby="list-stop-list"></div>
+            <div class="tab-pane fade" id="list-RefrenceLoginData" role="tabpanel" aria-labelledby="list-stop-list"></div>
+            <!-- <div class="tab-pane fade" id="list-DesignDriver" role="tabpanel" aria-labelledby="list-stop-list"></div> -->
+            <div class="tab-pane fade" id="list-SampleProject" role="tabpanel" aria-labelledby="list-stop-list"></div>
+            <div class="tab-pane fade" id="list-RunningTest" role="tabpanel" aria-labelledby="list-stop-list"></div>
+            <div class="tab-pane fade" id="list-About" role="tabpanel" aria-labelledby="list-stop-list"></div>
+            
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <hr />
+
+  </div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>

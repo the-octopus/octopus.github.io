@@ -1,0 +1,66 @@
+<div id="article">
+
+  <div class="code-font">
+    <h1>Test methods</h1>
+  </div>
+
+  <hr />
+
+  <div class="content">
+    <p>
+      <code>The-Octopus-Test</code> framework is designed based on the <code>DataDriven</code> approach.
+    </p>
+    <p>
+      In order to have the DataDriven feature, You need to have a test method that is designed to accept defferent test
+      data sets.
+    </p>
+
+    <p>
+      Some said words about test method design is
+      <code>Do not re implement the bussiness in the test methods, Just test it.</code>
+    </p>
+
+
+    <br />
+    <hr />
+    <h4>Test methods guidlines:</h4>
+    <hr />
+    <br />
+
+    <p>- It is a mandatory to pass a dictionary to the test method.</p>
+    <p>- It is a MUST to use the <code>dict()</code> data collection, becuase it is a Key/Value data collection type.
+    </p>
+    <p>- Test method is a simple blind method that only interact with the application elements by Click(), sendKeys(),
+      ..etc.</p>
+    <p>- Test method can contains some reporting steps using the <code>Reporter</code> class.</p>
+    <p>- It is recommended to return a values to explain the status of the test method.</p>
+
+    <p>
+      - For example, to create a test method, that is supporting <code>DataDriven</code> approach:
+    </p>
+    <pre>
+      <graycode>
+
+        # Test Method is taking parameter of data type dictionary
+
+        # Test method is a blind method wich is taking input data , then input data to the screen
+
+        def login(self,<b>tdr=dict()</b>):
+
+            self.set_userName(<b>tdr["userID"]</b>)
+
+            self.set_password(<b>tdr["Password"]</b>)
+
+            self.click_submit()
+
+            return True
+
+    </graycode>
+    </pre>
+
+
+
+    
+  </div>
+
+</div>
