@@ -1,4 +1,5 @@
-var landingPage = window.location.href.split("-")[1] || "create";
+// var landingPage = window.location.href.split("-")[1] || "create";
+var landingPage = "create";
 getCommandPage(landingPage);
 
 $('#list-tab a').on('click', function (e) {
